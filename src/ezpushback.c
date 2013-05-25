@@ -245,6 +245,7 @@ float pushback_flcb(float    elapsed_sec_since_last_call,
 
     if (ezpb_state != EZPB_STATE_STOPPING && flags & EZPB_FLAG_PARKING_BRAKE_ENGAGED) {
         debug("parking was brake engaged during operation -- stopping push/tug");
+        ui_dialog(UI_DIALOG_TEXT_BRAKES_STOPPING, UI_BUTTON_NONE, UI_DIALOG_NO_DELAY);
         set_state(EZPB_STATE_STOPPING);
     }
 
@@ -271,7 +272,7 @@ float pushback_flcb(float    elapsed_sec_since_last_call,
             break;
     }
 
-    if (flags &= EZPB_FLAG_PARKING_BRAKE_ENGAGED) {
+    if (flags & EZPB_FLAG_PARKING_BRAKE_ENGAGED) {
         // do not apply force when parking brake is engaged
         // but keep calling back until aircraft has stopped
         return -1.0f;

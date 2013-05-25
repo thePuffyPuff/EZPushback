@@ -49,7 +49,7 @@ extern "C" {
     #define PLATFORM "lin32"
 #endif
 
-#define PLUGIN_VERSION      "0.4.1"
+#define PLUGIN_VERSION      "0.4.2"
 #define PLUGIN_NAME         "EZPushback " PLUGIN_VERSION " (" PLATFORM ")"
 #define PLUGIN_SIGNATURE    "tpp.ezpushback"
 #define COPYRIGHT           "Copyright (C) 2013 Rich Lucas (thePuffyPuff)"
@@ -89,6 +89,7 @@ extern "C" {
 #define UI_DIALOG_TEXT_AIRCRAFT_NOT_LOADED   3
 #define UI_DIALOG_TEXT_PARKING_BRAKE         4
 #define UI_DIALOG_TEXT_AIRCRAFT_MOVING       5
+#define UI_DIALOG_TEXT_BRAKES_STOPPING       6
 
 #define UI_POSITION_DEFAULT  -1
 

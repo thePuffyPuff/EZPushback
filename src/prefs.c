@@ -114,7 +114,7 @@ void read_prefs()
         if (strcmp("x", token) == 0) {
             token = strtok(NULL, "= \n");
             i = atoi(token);
-            if (i >= 0 && i < 99999) {
+            if (i == UI_POSITION_DEFAULT || (i >= 0 && i < 99999)) {
                 debug("%s x=%d", ini_file, i);
                 x = i;
                 prefs++;
@@ -127,7 +127,7 @@ void read_prefs()
         else if (strcmp("y", token) == 0) {
             token = strtok(NULL, "= \n");
             i = atoi(token);
-            if (i >= 0 && i < 99999) {
+            if (i == UI_POSITION_DEFAULT || (i >= 0 && i < 99999)) {
                 debug("%s y=%d", ini_file, i);
                 y = i;
                 prefs++;
@@ -222,6 +222,7 @@ void write_prefs()
             "# This file will be written and reformatted when the plugin saves state.\n"
             "\n"
             "# dialog window position (x=left, y=top)\n"
+            "# use x=-1 and y=-1 for default positioning\n"
             "# moving the window in the sim will change x and y upon save\n"
             "x=%d\n"
             "y=%d\n"

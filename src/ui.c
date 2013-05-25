@@ -54,7 +54,8 @@ const char* ui_dialog_text[] = {
     "Operation complete -- have a good flight!",
     "Unable to push / tug -- aircraft is not loaded.",
     "Unable to push / tug -- parking brake is set.",
-    "Unable to push / tug -- aircraft is already moving."
+    "Unable to push / tug -- aircraft is already moving.",
+    "Parking brakes deployed -- stopping push / tug."
 };
 
 
