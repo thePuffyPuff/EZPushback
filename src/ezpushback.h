@@ -49,7 +49,7 @@ extern "C" {
     #define PLATFORM "lin32"
 #endif
 
-#define PLUGIN_VERSION      "0.3.2"
+#define PLUGIN_VERSION      "0.4.1"
 #define PLUGIN_NAME         "EZPushback " PLUGIN_VERSION " (" PLATFORM ")"
 #define PLUGIN_SIGNATURE    "tpp.ezpushback"
 #define COPYRIGHT           "Copyright (C) 2013 Rich Lucas (thePuffyPuff)"

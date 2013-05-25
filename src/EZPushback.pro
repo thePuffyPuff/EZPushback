@@ -69,6 +69,27 @@ macx {
     QMAKE_POST_LINK += nm $(DESTDIR)mac.xpl | grep \"T \"
 }
 
+unix:!macx {
+    message("linux")
+    DEFINES += APL=0 IBM=0 LIN=1
+    TARGET = lin.xpl
+    QMAKE_CXXFLAGS += -fvisibility=hidden
+    DEFINES += XPLANE_PLUGIN_DIR=../../../xp10/Resource/plugins
+    QMAKE_POST_LINK += mv $(DESTDIR)liblin.xpl.so $(DESTDIR)lin.xpl &
+    QMAKE_POST_LINK += ldd $(DESTDIR)lin.xpl &
+}
+
+LINUX_X64 {
+    message("LINUX_X64")
+    DESTDIR=../plugin/EZPushback/64
+}
+
+LINUX_X86 {
+    message("LINUX_X86")
+    DESTDIR=../plugin/EZPushback/32
+}
+
+
 SOURCES += \
     ezpushback.c \
     datarefs.c \
